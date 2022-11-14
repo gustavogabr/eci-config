@@ -1,0 +1,76 @@
+
+eureka:
+    instance:
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        statusPageUrlPath: ${server.servlet.context-path}/actuator/info
+        healthCheckUrlPath: ${server.servlet.context-path}/actuator/health
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:9081/eureka
+
+rsa:
+    private-key: classpath:eci-private.pem
+    public-key: classpath:eci-public.pem
+
+api:
+    jwt:
+        issuer: ECI-API-Issuer
+        audience: Econect
+        subject: ECI-API-JTW-Token
+        expirationTimeInMinutes: 60
+        notBeforeThePastInMinutes: 10
+        claim:
+            login: loginUsuario
+            name: nomeUsuario
+            roles: permissoes
+    login:
+        userLogin: econect
+        userName: Econect ECI API
+        userPasswd: 1234
+        userRoles: 100,200,300,400
+
+logging:
+    level:
+        br:
+            econect:
+                eci: TRACE
+        root: INFO
+
+management:
+    endpoint:
+        shutdown:
+            enabled: true
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+
+server:
+    port: 0
+
+spring:
+    main:
+        allow-circular-references: true
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: B4nc0my5q1
+        testWhileIdle: true
+        username: root
+        validationQuery: SELECT 1
+    jpa:
+        hibernate:
+            ddl-auto: update
+        open-in-view: false
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+                format_sql: true
+        show-sql: false
+
+springdoc:
+    api-docs:
+        path: /api-docs
+    show-actuator: false
+    swagger-ui:
+        path: /api-docs-ui.html
+
