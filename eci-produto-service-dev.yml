@@ -1,0 +1,28 @@
+logging:
+  level:
+    br:
+      econect:
+        eci:
+          produto: TRACE
+    root: INFO
+
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+server:
+  port: 0
+  servlet:
+    context-path: /eci-produto
+
+spring:
+  application:
+    name: eci-produto-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/eci_produto?createDatabaseIfNotExist=true
+
