@@ -1,3 +1,6 @@
+user:
+ role: DEFAULT
+ 
 logging:
   level:
     br:
