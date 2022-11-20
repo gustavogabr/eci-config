@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: eci-discovery-service
+
+server:
+  port: 9081
