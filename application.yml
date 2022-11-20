@@ -20,8 +20,8 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:9081/eureka
   instance:
-    healthCheckUrlPath: ${server.servlet.context-path}/actuator/health
     instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    healthCheckUrlPath: ${server.servlet.context-path}/actuator/health
     statusPageUrlPath: ${server.servlet.context-path}/actuator/info
 
 logging:
