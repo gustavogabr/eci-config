@@ -1,33 +1,28 @@
-
-eureka:
-  instance:
-    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
-    statusPageUrlPath: ${server.servlet.context-path}/actuator/info
-    healthCheckUrlPath: ${server.servlet.context-path}/actuator/health
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:9081/eureka
-
-rsa:
-  private-key: classpath:eci-private.pem
-  public-key: classpath:eci-public.pem
-
 api:
   jwt:
-    issuer: ECI-API-Issuer
     audience: Econect
-    subject: ECI-API-JTW-Token
-    expirationTimeInMinutes: 60
-    notBeforeThePastInMinutes: 10
     claim:
       login: loginUsuario
       name: nomeUsuario
       roles: permissoes
+    expirationTimeInMinutes: 60
+    issuer: ECI-API-Issuer
+    notBeforeThePastInMinutes: 10
+    subject: ECI-API-JTW-Token
   login:
     userLogin: econect
     userName: Econect ECI API
     userPasswd: 1234
     userRoles: 100,200,300,400
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9081/eureka
+  instance:
+    healthCheckUrlPath: ${server.servlet.context-path}/actuator/health
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    statusPageUrlPath: ${server.servlet.context-path}/actuator/info
 
 logging:
   level:
@@ -35,7 +30,6 @@ logging:
       econect:
         eci: INFO
     root: INFO
-
 management:
   endpoint:
     shutdown:
@@ -45,12 +39,14 @@ management:
       exposure:
         include: '*'
 
+rsa:
+  private-key: classpath:eci-private.pem
+  public-key: classpath:eci-public.pem
+
 server:
   port: 0
 
 spring:
-  main:
-    allow-circular-references: true
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     password: B4nc0my5q1
@@ -66,6 +62,8 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
         format_sql: true
     show-sql: false
+  main:
+    allow-circular-references: true
 
 springdoc:
   api-docs:
@@ -73,4 +71,3 @@ springdoc:
   show-actuator: false
   swagger-ui:
     path: /api-docs-ui.html
-
