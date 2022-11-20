@@ -7,11 +7,11 @@ spring:
     name: eci-preco-service
     datasource:
       driver-class-name: com.mysql.jdbc.Driver
-  username: root
-    password: B4nc0my5q1
-    url: jdbc:mysql://localhost:3306/eci_preco?createDatabaseIfNotExist=true
-    testWhileIdle: true
-    validationQuery: SELECT 1
+      username: root
+      password: B4nc0my5q1
+      url: jdbc:mysql://localhost:3306/eci_preco?createDatabaseIfNotExist=true
+      testWhileIdle: true
+      validationQuery: SELECT 1
 
 logging:
   level:
