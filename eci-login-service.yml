@@ -1,0 +1,15 @@
+server:
+  servlet:
+    context-path: /eci-login
+
+spring:
+  application:
+    name: eci-login-service
+
+logging:
+  level:
+    br:
+      econect:
+        eci:
+          auth: DEBUG
+
