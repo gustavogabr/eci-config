@@ -1,18 +1,18 @@
+eureka:
+    instance:
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        statusPageUrlPath: ${server.servlet.context-path}/actuator/info
+        healthCheckUrlPath: ${server.servlet.context-path}/actuator/health
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:9081/eureka
+
 server:
   port: 9595
-
-eureka:
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    service-url:
-      defaultZone: http://localhost:9081/eureka
 
 spring:
   application:
     name: eci-gateway-service
-  config:
-    import: optional:configserver:http://localhost:8888
   profiles:
     active: default
   cloud:
@@ -33,7 +33,7 @@ spring:
         - id: id-route-preco
           uri: lb://eci-preco-service
           predicates:
-            -  Path=/eci-preco/**
+            - Path=/eci-preco/**
         - id: id-route-produto
           uri: lb://eci-produto-service
           predicates:
@@ -46,4 +46,4 @@ spring:
           uri: lb://eci-usuario-service
           predicates:
             - Path=/eci-usuario/**
-
+	
