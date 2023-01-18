@@ -1,6 +1,11 @@
+server:
+    port: 9081
+    
 spring:
   application:
     name: eci-discovery-service
+    profiles:
+        active: default
 
 eureka:
   client:
@@ -8,3 +13,4 @@ eureka:
     fetchRegistry: false
     service-url:
       defaultZone: http://localhost:9081/eureka
+
