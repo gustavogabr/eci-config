@@ -8,42 +8,42 @@ eureka:
             defaultZone: http://localhost:9081/eureka
 
 server:
-  port: 9595
+    port: 9595
 
 spring:
-  application:
-    name: eci-gateway-service
-  profiles:
-    active: default
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-      routes:
-        - id: id-route-eci-login
-          uri: lb://eci-login-service
-          predicates:
-            - Path=/eci-login/**
-        - id: id-route-classifmerc
-          uri: lb://eci-classifmerc-service
-          predicates:
-            - Path=/eci-classifmerc/**
-        - id: id-route-preco
-          uri: lb://eci-preco-service
-          predicates:
-            - Path=/eci-preco/**
-        - id: id-route-produto
-          uri: lb://eci-produto-service
-          predicates:
-            - Path=/eci-produto/**
-        - id: id-route-promocao
-          uri: lb://eci-promocao-service
-          predicates:
-            - Path=/eci-promocao/**
-        - id: id-route-usuario
-          uri: lb://eci-usuario-service
-          predicates:
-            - Path=/eci-usuario/**
-	
+    application:
+        name: eci-gateway-service
+    profiles:
+        active: default
+    cloud:
+        gateway:
+            discovery:
+                locator:
+                    enabled: true
+                    lower-case-service-id: true
+            routes:
+                -   id: id-route-eci-login
+                    uri: lb://eci-login-service
+                    predicates:
+                        - Path=/eci-login/**
+                -   id: id-route-classifmerc
+                    uri: lb://eci-classifmerc-service
+                    predicates:
+                        - Path=/eci-classifmerc/**
+                -   id: id-route-preco
+                    uri: lb://eci-preco-service
+                    predicates:
+                        - Path=/eci-preco/**
+                -   id: id-route-produto
+                    uri: lb://eci-produto-service
+                    predicates:
+                        - Path=/eci-produto/**
+                -   id: id-route-promocao
+                    uri: lb://eci-promocao-service
+                    predicates:
+                        - Path=/eci-promocao/**
+                -   id: id-route-usuario
+                    uri: lb://eci-usuario-service
+                    predicates:
+                        - Path=/eci-usuario/**
+
