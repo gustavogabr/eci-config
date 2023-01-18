@@ -21,8 +21,6 @@ eureka:
       defaultZone: http://localhost:9081/eureka
   instance:
     instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
-    healthCheckUrlPath: ${server.servlet.context-path}/actuator/health
-    statusPageUrlPath: ${server.servlet.context-path}/actuator/info
 
 logging:
   level:
@@ -30,6 +28,7 @@ logging:
       econect:
         eci: INFO
     root: INFO
+
 management:
   endpoint:
     shutdown:
@@ -46,22 +45,7 @@ rsa:
 server:
   port: 0
 
-spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    password: B4nc0my5q1
-    testWhileIdle: true
-    username: root
-    validationQuery: SELECT 1
-  jpa:
-    hibernate:
-      ddl-auto: update
-    open-in-view: false
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-        format_sql: true
-    show-sql: false
+spring:  
   main:
     allow-circular-references: true
 
