@@ -1,0 +1,12 @@
+spring:
+    application:
+        name: eci-login-service
+
+logging:
+    level:
+        br:
+            econect:
+                eci:
+                    login: INFO
+        root: INFO
+
