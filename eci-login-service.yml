@@ -6,8 +6,6 @@ server:
 spring:
     application:
         name: eci-login-service
-    main:
-        allow-circular-references: true
 
 logging:
     level:

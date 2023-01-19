@@ -4,8 +4,6 @@ server:
 spring:
   application:
     name: eci-discovery-service
-    profiles:
-        active: default
 
 logging:
     level:

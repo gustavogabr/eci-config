@@ -6,8 +6,6 @@ server:
 spring:
     application:
         name: eci-classifmerc-service
-    main:
-        allow-circular-references: true
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
         username: root
@@ -32,5 +30,4 @@ logging:
                 eci:
                     classifmerc: INFO
         root: INFO
-
 

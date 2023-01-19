@@ -12,8 +12,6 @@ logging:
 spring:
     application:
         name: eci-gateway-service
-    profiles:
-        active: default
     cloud:
         gateway:
             discovery:
