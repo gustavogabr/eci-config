@@ -1,10 +1,8 @@
 spring:
+    main:
+        allow-circular-references: true
     application:
         name: eci-login-service
-
-spring:
-  main:
-    allow-circular-references: true
 
 logging:
     level:
