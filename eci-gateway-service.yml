@@ -1,6 +1,14 @@
 server:
     port: 9595
 
+logging:
+    level:
+        br:
+            econect:
+                eci:
+                    gatewayservice: INFO
+        root: INFO
+
 spring:
     application:
         name: eci-gateway-service

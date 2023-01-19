@@ -7,6 +7,14 @@ spring:
     profiles:
         active: default
 
+logging:
+    level:
+        br:
+            econect:
+                eci:
+                    discoveryservice: INFO
+        root: INFO
+
 eureka:
   client:
     registerWithEureka: false
