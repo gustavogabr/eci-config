@@ -1,8 +1,13 @@
+server:
+    servlet:
+        context-path: /eci-login
+    port: 0
+
 spring:
-    main:
-        allow-circular-references: true
     application:
         name: eci-login-service
+    main:
+        allow-circular-references: true
 
 logging:
     level:
