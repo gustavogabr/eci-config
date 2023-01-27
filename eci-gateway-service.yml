@@ -43,4 +43,8 @@ spring:
                     uri: lb://eci-usuario-service
                     predicates:
                         - Path=/eci-usuario/**
+                -   id: id-route-cliente
+                    uri: lb://eci-cliente-service
+                    predicates:
+                        - Path=/eci-cliente/**
 
