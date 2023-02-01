@@ -21,12 +21,14 @@ spring:
         globalcors:
             corsConfigurations:
                 '[/**]':
-                allowedOrigins: "*"
-                allowedMethods:
-                    - GET
-                    - POST
-                    - PUT
-                    - DELETE
+                    allowedOrigins: 'http://localhost:4200'
+                    allowedHeaders:
+                        - Content-Type
+                    allowedMethods:
+                        - GET
+                        - POST
+                        - PUT
+                        - DELETE
             routes:
                 -   id: id-route-eci-login
                     uri: lb://eci-login-service
