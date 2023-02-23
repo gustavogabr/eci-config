@@ -6,22 +6,9 @@ server:
 spring:
     application:
         name: eci-audit-operacao-service
-    datasource:
-        driver-class-name: com.mysql.jdbc.Driver
-        username: root
-        password: B4nc0my5q1
-        url: jdbc:mysql://localhost:3306/eci_auditoper?createDatabaseIfNotExist=true
-        testWhileIdle: true
-        validationQuery: SELECT 1
-    jpa:
-        hibernate:
-            ddl-auto: update
-        open-in-view: false
-        properties:
-            hibernate:
-                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-                format_sql: true
-        show-sql: false
+    data:
+        mongodb:
+            uri: mongodb://localhost:27017/eci_auditoper
 
 logging:
     level:
@@ -30,4 +17,3 @@ logging:
                 eci:
                     auditoperacao: INFO
         root: INFO
-
