@@ -60,3 +60,7 @@ spring:
                     uri: lb://eci-autorizador-oper-service
                     predicates:
                         - Path=/eci-autorizador-oper/**
+                -   id: id-route-audit-operacao
+                    uri: lb://eci-audit-operacao-service
+                    predicates:
+                        - Path=/eci-audit-operacao/**
