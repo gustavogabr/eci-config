@@ -9,6 +9,7 @@ spring:
     data:
         mongodb:
             uri: mongodb://localhost:27017/eci_auditoper
+            database: eci_auditoper
 
 logging:
     level:
