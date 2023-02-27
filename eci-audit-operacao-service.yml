@@ -10,6 +10,7 @@ spring:
         mongodb:
             uri: mongodb://localhost:27017/eci_auditoper
             database: eci_auditoper
+            auto-index-creation: true
 
 logging:
     level:
