@@ -56,10 +56,18 @@ spring:
                     uri: lb://eci-cliente-service
                     predicates:
                         - Path=/eci-cliente/**
+                -   id: id-route-pedido
+                    uri: lb://eci-pedido-service
+                    predicates:
+                        - Path=/eci-pedido/**
                 -   id: id-route-autorizador-oper
                     uri: lb://eci-autorizador-oper-service
                     predicates:
                         - Path=/eci-autorizador-oper/**
+                -   id: id-route-campanha
+                    uri: lb://eci-campanha-service
+                    predicates:
+                        - Path=/eci-campanha/**
                 -   id: id-route-audit-operacao
                     uri: lb://eci-audit-operacao-service
                     predicates:
