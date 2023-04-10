@@ -72,3 +72,7 @@ spring:
                     uri: lb://eci-audit-operacao-service
                     predicates:
                         - Path=/eci-audit-operacao/**
+                -   id: id-route-cert-digital
+                    uri: lb://eci-cert-digital-service
+                    predicates:
+                        - Path=/eci-cert-digital/**
