@@ -5,7 +5,7 @@ server:
 
 spring:
     application:
-        name: eci-eci-cert-digital-service
+        name: eci-cert-digital-service
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
         username: root
