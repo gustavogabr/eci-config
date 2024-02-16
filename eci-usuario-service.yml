@@ -28,7 +28,6 @@ logging:
         br:
             econect:
                 eci:
-                    usuario: INFO
-        root: INFO
-
+                    usuario: DEBUG
+        root: DEBUG
 
