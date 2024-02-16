@@ -12,9 +12,6 @@ logging:
         br:
             econect:
                 eci:
-                    login: INFO
-        org:
-            springframework:
-                security: DEBUG        
-        root: DEBUG
+                    login: INFO   
+        root: INFO
 
