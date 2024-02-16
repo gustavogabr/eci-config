@@ -16,5 +16,5 @@ logging:
         org:
             springframework:
                 security: DEBUG        
-        root: INFO
+        root: DEBUG
 
