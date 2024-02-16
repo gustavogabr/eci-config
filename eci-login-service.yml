@@ -13,5 +13,8 @@ logging:
             econect:
                 eci:
                     login: INFO
+        org:
+            springframework:
+                security: DEBUG        
         root: INFO
 
