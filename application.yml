@@ -1,19 +1,18 @@
-api:
-  jwt:
-    audience: Econect
-    claim:
-      login: loginUsuario
-      name: nomeUsuario
-      roles: permissoes
-    expirationTimeInMinutes: 60
-    issuer: ECI-API-Issuer
-    notBeforeThePastInMinutes: 10
-    subject: ECI-API-JTW-Token
-  login:
-    userLogin: econect
-    userName: Econect ECI API
-    userPasswd: 1234
-    userRoles: 100,200,300,400
+eci:
+  auth:
+    jwt:
+      audience: Econect
+      claim:
+        login: loginUsuario
+        name: nomeUsuario
+        roles: permissoes
+      expirationTimeInMinutes: 120
+      issuer: ECI-API-Issuer
+      notBeforeThePastInMinutes: 10
+      subject: ECI-API-JTW-Token
+    rsa:
+      private-key: classpath:eci-private.pem
+      public-key: classpath:eci-public.pem
 
 logging:
   level:
@@ -30,10 +29,6 @@ management:
     web:
       exposure:
         include: '*'
-
-rsa:
-  private-key: classpath:eci-private.pem
-  public-key: classpath:eci-public.pem
 
 springdoc:
   api-docs:

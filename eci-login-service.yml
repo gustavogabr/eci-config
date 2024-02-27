@@ -1,17 +1,15 @@
-server:
-    servlet:
-        context-path: /eci-login
-    port: 0
-
-spring:
-    application:
-        name: eci-login-service
+eci:
+  login:
+    user:
+      login: econect
+      name: Econect ECI API
+      passwd: 1234
+      roles: 100,200,300,400
 
 logging:
-    level:
-        br:
-            econect:
-                eci:
-                    login: INFO   
-        root: INFO
-
+  level:
+    br:
+      econect:
+        eci:
+          login: INFO
+    root: INFO
