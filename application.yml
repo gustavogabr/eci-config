@@ -1,5 +1,5 @@
 eci:
-  auth:
+  security:
     jwt:
       audience: Econect
       claim:
